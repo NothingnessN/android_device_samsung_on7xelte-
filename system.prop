@@ -1,0 +1,73 @@
+# ADB on boot
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+
+# Audio
+af.fast_track_multiplier=1
+ro.config.vc_call_vol_steps=15
+audio_hal.disable_two_mic=true
+
+# Dalvik Heap
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+
+
+# DPI
+ro.sf.lcd_density=480
+
+# Factory Reset Protection
+ro.frp.pst=/dev/block/platform/13540000.dwmmc0/by-name/PERSISTENT
+
+# Graphics
+ro.opengles.version=196610
+debug.hwc.skip_dma_types=0,2
+debug.hwc.force_gpu=1
+debug.sf.disable_backpressure=1
+persist.hwc.ptor.enable=true
+ro.surface_flinger.supports_background_blur=false
+persist.sys.sf.disable_blurs=true
+
+# Boot directly from charger mode
+ro.enable_boot_charger_mode=1
+
+# Netflix
+ro.netflix.bsp_rev=Q660-13149-1
+
+# Radio
+persist.radio.sib16_support=0
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+ro.ril.telephony.mqanelements=6
+ro.telephony.default_network=9
+ro.telephony.get_imsi_from_sim=true
+ro.ril.force_eri_from_xml=true
+persist.radio.add_power_save=1
+persist.radio.apm_sim_not_pwdn=1
+ro.smps.enable=true
+telephony.lteOnCdmaDevice=0
+
+# read DS/SS property
+import /efs/factory.prop *
+
+# ro.product.first_api_level indicates the first api level the device has commercially launched on.
+ro.product.first_api_level=23
+
+# Sdcardfs
+ro.sys.sdcardfs=true
+
+# Set fdsan security level warn once
+debug.fdsan=warn_once
+
+# Wifi
+wifi.interface=wlan0
+
+# Wifi Display
+wlan.wfd.hdcp=disable
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
+
+# Bpf
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.kernel.ebpf.supported=false
